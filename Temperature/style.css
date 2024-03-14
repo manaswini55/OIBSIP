@@ -1,0 +1,27 @@
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  .box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  #result {
+    font-size: 1.2em;
+  }
+  #wifiSignal, #time {
+    font-size: 1.2em;
+  }
+  #signalStrength {
+    height: 20px;
+    background-color: green;
+    transition: width 0.5s ease;
+  }
+  #timeBox, #wifiBox {
+    display: inline-block;
+    width: calc(50% - 20px);
+    vertical-align: top;
+  }
+</style>
