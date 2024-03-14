@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Converter</title>
+  
+</head>
+<body>
+  <h2>Temperature Converter</h2>
+  <input type="text" id="temperatureInput" placeholder="Enter temperature" required>
+  <select id="unitSelect">
+    <option value="celsius">Celsius</option>
+    <option value="fahrenheit">Fahrenheit</option>
+    <option value="kelvin">Kelvin</option>
+  </select>
+  <button onclick="convertTemperature()">Convert</button>
+  <div id="result"></div>
+
+  <div class="box" id="wifiBox">
+    <h3>Wi-Fi Signal Strength</h3>
+    <div id="wifiSignal">
+      <div class="signalStrength" id="signalStrength"></div>
+    </div>
+  </div>
+
+  <div class="box" id="timeBox">
+    <h3>Current Time</h3>
+    <div id="time"></div>
+  </div>
+
+  <script>
+    function convertTemperature() {
+      var inputTemp = parseFloat(document.getElementById('temperatureInput').value);
+      var unit = document.getElementById('unitSelect').value;
+      var resultDiv = document.getElementById('result');
+      var result;
+
+      if (isNaN(inputTemp)) {
+        resultDiv.innerText = "Please enter a valid number!";
+        return;
+      }
+
+      if (unit === 'celsius') {
+        result = (inputTemp * 9/5) + 32;
+        resultDiv.innerText = inputTemp + "°C is " + result.toFixed(2) + "°F";
+      } else if (unit === 'fahrenheit') {
+        result = (inputTemp - 32) * 5/9;
+        resultDiv.innerText = inputTemp + "°F is " + result.toFixed(2) + "°C";
+      } else if (unit === 'kelvin') {
+        result = inputTemp - 273.15;
+        resultDiv.innerText = inputTemp + "K is " + result.toFixed(2) + "°C";
+      }
+    }
+
+    function updateWifiSignal() {
+      var strength = Math.floor(Math.random() * 100); // Simulating signal strength between 0 to 100
+      var signalStrengthDiv = document.getElementById('signalStrength');
+      signalStrengthDiv.style.width = strength + "%";
+      if (strength < 20) {
+        signalStrengthDiv.style.backgroundColor = "red";
+      } else if (strength < 50) {
+        signalStrengthDiv.style.backgroundColor = "orange";
+      } else {
+        signalStrengthDiv.style.backgroundColor = "green";
+      }
+    }
+
+    function updateTime() {
+      var now = new Date();
+      var timeDiv = document.getElementById('time');
+      var hours = now.getHours().toString().padStart(2, '0');
+      var minutes = now.getMinutes().toString().padStart(2, '0');
+      var seconds = now.getSeconds().toString().padStart(2, '0');
+      timeDiv.textContent = hours + ":" + minutes + ":" + seconds;
+    }
+
+    // Initial update
+    convertTemperature();
+    updateWifiSignal();
+    updateTime();
+
+    // Update WiFi signal and time every 5 seconds
+    setInterval(function() {
+      updateWifiSignal();
+      updateTime();
+    }, 5000);
+  </script>
+</body>
+</html>
