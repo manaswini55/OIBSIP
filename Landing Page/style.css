@@ -1,0 +1,91 @@
+<style>
+        
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Verdana;
+    }
+
+    .nav1 {
+        width: 100%;
+        height: 50px;
+        color: rgb(0, 0, 0);
+        background: #076689;
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    .nav1 i {
+        margin: 0 5px;
+    }
+
+    .nav1 a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        padding: 5px 10px;
+        background: #241984;
+    }
+
+    .nav2 {
+        width: 100%;
+        height: 80px;
+        background: rgb(7, 131, 145);
+        color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 0px;
+    }
+
+    .menu a {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        padding: 10px 20px;
+    }
+
+    header {
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(rgba(86, 24, 102, 0.7) 80%, #3e99e9), url('images/gitaclg1.jpg');
+        background-size: 100% 100%;
+    }
+
+    .h-text {
+        max-width: 600px;
+        color: rgb(0, 0, 0);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .h-text h1 {
+        font-size: 3em;
+        font-family: "verdana", cursive;
+
+    }
+
+    .h-text span {
+        color: #000000;
+        font-family: "verdana", cursive;
+    }
+
+    .h-text p {
+        font-size: 20px;
+        margin: 40px 0;
+        line-height: 30px;
+    }
+
+    .h-text a {
+        text-decoration: none;
+        color: white;
+        background: #13100e;
+        padding: 10px 20px;
+        margin: 0 15px;
+        letter-spacing: 5px;
+    }
+</style>
